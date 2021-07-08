@@ -17,7 +17,7 @@ services:
       - ${DATABASE_PORT}:3306
     volumes:
       - ./docker/database/init.sql:/docker-entrypoint-initdb.d/init.sql
-      - ./docker/database/data:/var/lib/mysql
+      - ./docker/database/data/${APP_ENV}:/var/lib/mysql
     networks:
       - devolon_shopping_cart
 

@@ -1,9 +1,9 @@
 DOCKER_COMPOSE = docker-compose
 EXEC_PHP = $(DOCKER_COMPOSE) exec php-fpm
-EXEC_PHP_TEST = $(DOCKER_COMPOSE) --file-env .env.test exec php-fpm
+EXEC_PHP_TEST = $(DOCKER_COMPOSE) --env-file .env.test run --rm php-fpm
 SYMFONY = $(EXEC_PHP) bin/console
 COMPOSER = $(EXEC_PHP) composer
-PHP_UNIT = $(EXEC_PHP) vendor/bin/phpunit
+PHP_UNIT = $(EXEC_PHP_TEST)  vendor/bin/phpunit
 
 
 install: ## install
@@ -11,7 +11,11 @@ install: vendor
 		docker network create devolon_shopping_cart
 		$(DOCKER_COMPOSE) build
 		$(DOCKER_COMPOSE) run --rm php-fpm composer install
-		$(DOCKER_COMPOSE) up -d --restart=unless-stopped
+		$(DOCKER_COMPOSE) up -d --restart=unless-stopped --remove-orphans
+
+up: ## up
+up: vendor
+		$(DOCKER_COMPOSE) up -d --restart=unless-stopped --remove-orphans
 
 login-php: ## login to php docker
 login-php:
