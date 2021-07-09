@@ -4,11 +4,9 @@ namespace App\EventSubscriber;
 
 use App\Exceptions\CustomBadException;
 use Psr\Log\LoggerInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\ControllerEvent;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
-use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
  * Class MiddlewareJsonBeforeSubscriber.
@@ -18,17 +16,13 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 class MiddlewareJsonBeforeSubscriber implements EventSubscriberInterface
 {
     private LoggerInterface $logger;
-    private ContainerInterface $container;
-    private ValidatorInterface $validator;
 
     /**
      * MiddlewareJsonBeforeSubscriber constructor.
      */
-    public function __construct(LoggerInterface $logger, ContainerInterface $container, ValidatorInterface $validator)
+    public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
-        $this->container = $container;
-        $this->validator = $validator;
     }
 
     public function onKernelRequest(RequestEvent $event): void

@@ -3,11 +3,9 @@
 namespace App\EventSubscriber;
 
 use Psr\Log\LoggerInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\HttpKernel\Event\ResponseEvent;
-use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
  * Class RequestResponseLoggerSubscriber.
@@ -19,21 +17,13 @@ class RequestResponseLoggerSubscriber implements EventSubscriberInterface
 
     private LoggerInterface $logger;
 
-    private ContainerInterface $container;
-
-    private ValidatorInterface $validator;
-
     /**
      * RequestResponseLoggerSubscriber constructor.
      * @param LoggerInterface $requestResponseLogger
-     * @param ContainerInterface $container
-     * @param ValidatorInterface $validator
      */
-    public function __construct(LoggerInterface $requestResponseLogger, ContainerInterface $container, ValidatorInterface $validator)
+    public function __construct(LoggerInterface $requestResponseLogger)
     {
         $this->logger = $requestResponseLogger;
-        $this->container = $container;
-        $this->validator = $validator;
     }
 
     public function onRequest(RequestEvent $event): void
