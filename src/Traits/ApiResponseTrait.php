@@ -137,10 +137,10 @@ trait ApiResponseTrait
      */
     public function respondWithSuccess($message, $headers = [])
     {
-        $message = ['status' => $this->getStatusCode(), 'message' => $message];
+        $message = ['status' => $this->getStatusCode(), 'data' => $message];
 
-        if (isset($message['message']['pagination']['total'])) {
-            $headers['X-Total-Count'] = $message['message']['pagination']['total'];
+        if (isset($message['data']['pagination']['total'])) {
+            $headers['X-Total-Count'] = $message['data']['pagination']['total'];
             $headers['Access-Control-Expose-Headers'] = 'X-Total-Count';
         }
 

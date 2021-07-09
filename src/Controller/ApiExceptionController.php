@@ -42,13 +42,13 @@ class ApiExceptionController
     {
         $responseBody = [
             'status' => $this->statusCode,
-            'message' => $this->title,
+            'data' => $this->title,
 //            'type' => $this->type,
         ];
 
         if ($this->statusCode >= 400) {
             $responseBody['errors'] = $this->title;
-            unset($responseBody['message']);
+            unset($responseBody['data']);
         }
 
         return array_merge($this->extraData, $responseBody);
