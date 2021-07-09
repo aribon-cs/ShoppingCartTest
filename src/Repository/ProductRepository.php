@@ -3,7 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Product;
-use App\Traits\Filterable;
+use App\Traits\FilterableTrait;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -14,7 +14,7 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class ProductRepository extends AbstractRepository implements FilterableRepositoryInterface
 {
-    use Filterable;
+    use FilterableTrait;
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Product::class);

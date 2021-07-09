@@ -7,11 +7,11 @@ use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 
 /**
- * Trait Filterable.
+ * Trait FilterableTrait.
  *
  * @author Saeed Jazei <cs.jazei@gmail.com>
  */
-trait Filterable
+trait FilterableTrait
 {
     public function getResultByQueryFilter(QueryFilterInterface $filter, array $data)
     {
