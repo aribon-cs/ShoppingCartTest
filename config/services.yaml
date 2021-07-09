@@ -29,3 +29,11 @@ services:
         arguments: [ ]
         tags:
             - { name: kernel.event_subscriber }
+
+    App\Transformer\ProductTransformer: ~
+    App\Transformer\DiscountTransformer: ~
+    App\Transformer\PaginateTransformer: ~
+    App\Transformer\TransformerInterface $productTransformer: '@App\Transformer\ProductTransformer'
+    App\Transformer\TransformerInterface $discountTransformer: '@App\Transformer\DiscountTransformer'
+    App\Transformer\TransformerInterface $paginateTransformer: '@App\Transformer\PaginateTransformer'
+    App\Transformer\TransformerInterface: '@App\Transformer\ProductTransformer'
