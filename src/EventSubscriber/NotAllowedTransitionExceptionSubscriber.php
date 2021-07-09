@@ -28,7 +28,7 @@ class NotAllowedTransitionExceptionSubscriber implements EventSubscriberInterfac
      */
     public function __construct(ParameterBagInterface $parameterBag, Security $security)
     {
-        $this->isDev = 'dev' == $parameterBag->get('app.environment');
+        $this->isDev = 'dev' == $parameterBag->get('kernel.environment');
         $this->security = $security;
     }
 

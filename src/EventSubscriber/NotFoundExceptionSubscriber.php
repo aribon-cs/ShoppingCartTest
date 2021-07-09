@@ -23,7 +23,7 @@ class NotFoundExceptionSubscriber implements EventSubscriberInterface
      */
     public function __construct(ParameterBagInterface $parameterBag)
     {
-        $this->isDev = 'dev' == $parameterBag->get('app.environment');
+        $this->isDev = 'dev' == $parameterBag->get('kernel.environment');
     }
 
     final public function onKernelException(ExceptionEvent $event): void
