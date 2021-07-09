@@ -20,7 +20,7 @@ class Product extends AbstractBaseEntity
     private ?int $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      */
     private ?string $name;
 
@@ -30,9 +30,9 @@ class Product extends AbstractBaseEntity
     private ?string $price;
 
     /**
-     * @ORM\OneToMany(targetEntity=Discount::class, mappedBy="productId", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Discount::class, mappedBy="product", orphanRemoval=true, fetch="EAGER")
      */
-    private ArrayCollection $discounts;
+    private Collection $discounts;
 
     public function __construct()
     {
@@ -81,7 +81,7 @@ class Product extends AbstractBaseEntity
     {
         if (!$this->discounts->contains($discount)) {
             $this->discounts[] = $discount;
-            $discount->setProductId($this);
+            $discount->setProduct($this);
         }
 
         return $this;
@@ -91,8 +91,8 @@ class Product extends AbstractBaseEntity
     {
         if ($this->discounts->removeElement($discount)) {
             // set the owning side to null (unless already changed)
-            if ($discount->getProductId() === $this) {
-                $discount->setProductId(null);
+            if ($discount->getProduct() === $this) {
+                $discount->setProduct(null);
             }
         }
 

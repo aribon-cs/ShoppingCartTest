@@ -7,6 +7,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=DiscountRepository::class)
+ * @ORM\Table(
+ *     uniqueConstraints={@ORM\UniqueConstraint(name="product_number_constraint",columns={"product_id","number"})}
+ *     )
  */
 class Discount extends AbstractBaseEntity
 {
@@ -21,7 +24,7 @@ class Discount extends AbstractBaseEntity
      * @ORM\ManyToOne(targetEntity=Product::class, inversedBy="discounts")
      * @ORM\JoinColumn(nullable=false)
      */
-    private ?Product $productId;
+    private ?Product $product;
 
     /**
      * @ORM\Column(type="smallint")
@@ -38,14 +41,14 @@ class Discount extends AbstractBaseEntity
         return $this->id;
     }
 
-    public function getProductId(): ?Product
+    public function getProduct(): ?Product
     {
-        return $this->productId;
+        return $this->product;
     }
 
-    public function setProductId(?Product $productId): self
+    public function setProduct(?Product $product): self
     {
-        $this->productId = $productId;
+        $this->product = $product;
 
         return $this;
     }
