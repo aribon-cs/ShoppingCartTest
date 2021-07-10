@@ -11,7 +11,6 @@ class ProductTransformer extends AbstractTransformer implements TransformerInter
     public function simpleTransformModel($item): array
     {
         return [
-            'id'=> $item->getId(),
             'name'=> $item->getName(),
             'price'=> intval($item->getPrice()),
         ];

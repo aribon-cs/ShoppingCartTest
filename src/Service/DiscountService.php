@@ -2,38 +2,39 @@
 
 namespace App\Service;
 
+use App\Entity\Discount;
 use App\Entity\Product;
 use App\Filter\QueryFilterInterface;
-use App\Repository\ProductRepository;
+use App\Repository\DiscountRepository;
 use App\Service\Filter\FilterServiceInterface;
 use App\Transformer\TransformerInterface;
 
-class ProductService
+class DiscountService
 {
     private FilterServiceInterface $filterService;
-    private ProductRepository $repository;
+    private DiscountRepository $repository;
     private QueryFilterInterface $queryFilter;
-    private TransformerInterface $productTransformer;
+    private TransformerInterface $discountTransformer;
 
     public function __construct(
         FilterServiceInterface $filterService,
-        ProductRepository $repository,
-        QueryFilterInterface $productQueryFilter,
-        TransformerInterface $productTransformer
+        DiscountRepository $repository,
+        QueryFilterInterface $discountQueryFilter,
+        TransformerInterface $discountTransformer
     )
     {
         $this->repository = $repository;
-        $this->queryFilter = $productQueryFilter;
+        $this->queryFilter = $discountQueryFilter;
         $this->filterService = $filterService;
-        $this->productTransformer = $productTransformer;
+        $this->discountTransformer = $discountTransformer;
     }
 
     public function getTransformer(): TransformerInterface
     {
-        return $this->productTransformer;
+        return $this->discountTransformer;
     }
 
-    public function getRepo(): ProductRepository
+    public function getRepo(): DiscountRepository
     {
         return $this->repository;
     }
@@ -47,16 +48,18 @@ class ProductService
     {
         return $this->getFilterService()
             ->getByQueryFilter($this->repository, $this->queryFilter)
-            ->paginateWithTransformer($this->productTransformer, $transformType);
+            ->paginateWithTransformer($this->discountTransformer, $transformType);
     }
 
-    public function insert($input): Product
+    public function insert($input, Product $product): Discount
     {
-        $product = new Product();
-        $product->dynamicSet($input);
-        $this->repository->save($product);
+        $discount = new Discount();
+        $discount->dynamicSet($input);
+        $discount->setProduct($product);
 
-        return $product;
+        $this->repository->save($discount);
+
+        return $discount;
     }
 
 }

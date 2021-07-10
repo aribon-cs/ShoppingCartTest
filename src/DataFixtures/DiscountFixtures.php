@@ -3,7 +3,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\Discount;
-use App\Entity\Product;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 

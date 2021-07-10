@@ -37,3 +37,9 @@ services:
     App\Transformer\TransformerInterface $discountTransformer: '@App\Transformer\DiscountTransformer'
     App\Transformer\TransformerInterface $paginateTransformer: '@App\Transformer\PaginateTransformer'
     App\Transformer\TransformerInterface: '@App\Transformer\ProductTransformer'
+
+    App\Filter\DiscountFilter: ~
+    App\Filter\ProductFilter: ~
+    App\Filter\QueryFilterInterface $discountQueryFilter: '@App\Filter\DiscountFilter'
+    App\Filter\QueryFilterInterface $productQueryFilter: '@App\Filter\ProductFilter'
+    App\Filter\QueryFilterInterface: '@App\Filter\ProductFilter'
