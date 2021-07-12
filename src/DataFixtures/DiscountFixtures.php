@@ -30,9 +30,9 @@ class DiscountFixtures extends BaseFixtures implements DependentFixtureInterface
 
     public function getDependencies()
     {
-        return array(
+        return [
             ProductFixtures::class,
-        );
+        ];
     }
 
     public static function getGroups(): array

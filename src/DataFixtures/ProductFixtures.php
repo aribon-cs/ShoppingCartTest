@@ -11,10 +11,10 @@ class ProductFixtures extends BaseFixtures
 
     public function loadData(ObjectManager $manager): void
     {
-        $this->createMany(200,self::PRODUCT_REFERENCE,
-            function (int $i){
+        $this->createMany(200, self::PRODUCT_REFERENCE,
+            function (int $i) {
                 $product = new Product();
-                $product->setName($this->faker->name());
+                $product->setName($this->faker->randomElement(['A', 'B', 'C', 'D']));
                 $product->setPrice($this->faker->numberBetween(1000, 2000000));
 
                 return $product;
