@@ -43,7 +43,6 @@ class ApiExceptionController
         $responseBody = [
             'status' => $this->statusCode,
             'data' => $this->title,
-//            'type' => $this->type,
         ];
 
         if ($this->statusCode >= 400) {
@@ -58,7 +57,7 @@ class ApiExceptionController
      * @param $name
      * @param $value
      */
-    final public function set(string $name, string $value): void
+    final public function set(string $name, $value): void
     {
         $this->extraData[$name] = $value;
     }
