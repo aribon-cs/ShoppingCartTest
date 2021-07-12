@@ -31,9 +31,13 @@ services:
             - { name: kernel.event_subscriber }
 
     App\Transformer\ProductTransformer: ~
+    App\Transformer\CheckoutTransformer: ~
+    App\Transformer\CartTransformer: ~
     App\Transformer\DiscountTransformer: ~
     App\Transformer\PaginateTransformer: ~
     App\Transformer\TransformerInterface $productTransformer: '@App\Transformer\ProductTransformer'
+    App\Transformer\TransformerInterface $checkoutTransformer: '@App\Transformer\CheckoutTransformer'
+    App\Transformer\TransformerInterface $cartTransformer: '@App\Transformer\CartTransformer'
     App\Transformer\TransformerInterface $discountTransformer: '@App\Transformer\DiscountTransformer'
     App\Transformer\TransformerInterface $paginateTransformer: '@App\Transformer\PaginateTransformer'
     App\Transformer\TransformerInterface: '@App\Transformer\ProductTransformer'

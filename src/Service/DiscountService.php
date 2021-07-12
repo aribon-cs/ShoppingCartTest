@@ -8,6 +8,7 @@ use App\Filter\QueryFilterInterface;
 use App\Repository\DiscountRepository;
 use App\Service\Filter\FilterServiceInterface;
 use App\Transformer\TransformerInterface;
+use function Psy\info;
 
 class DiscountService
 {
@@ -21,8 +22,7 @@ class DiscountService
         DiscountRepository $repository,
         QueryFilterInterface $discountQueryFilter,
         TransformerInterface $discountTransformer
-    )
-    {
+    ) {
         $this->repository = $repository;
         $this->queryFilter = $discountQueryFilter;
         $this->filterService = $filterService;
@@ -44,7 +44,7 @@ class DiscountService
         return $this->filterService;
     }
 
-    public function applyFilterWithPaginate(string $transformType='simple')
+    public function applyFilterWithPaginate(string $transformType = 'simple')
     {
         return $this->getFilterService()
             ->getByQueryFilter($this->repository, $this->queryFilter)
@@ -62,4 +62,11 @@ class DiscountService
         return $discount;
     }
 
+    public function update(Discount $discount, $input): Discount
+    {
+        $discount->dynamicSet($input);
+        $this->repository->save($discount);
+
+        return $discount;
+    }
 }

@@ -20,8 +20,7 @@ class ProductService
         ProductRepository $repository,
         QueryFilterInterface $productQueryFilter,
         TransformerInterface $productTransformer
-    )
-    {
+    ) {
         $this->repository = $repository;
         $this->queryFilter = $productQueryFilter;
         $this->filterService = $filterService;
@@ -43,7 +42,7 @@ class ProductService
         return $this->filterService;
     }
 
-    public function applyFilterWithPaginate(string $transformType='simple')
+    public function applyFilterWithPaginate(string $transformType = 'simple')
     {
         return $this->getFilterService()
             ->getByQueryFilter($this->repository, $this->queryFilter)
@@ -59,4 +58,11 @@ class ProductService
         return $product;
     }
 
+    public function update(Product $product, $input): Product
+    {
+        $product->dynamicSet($input);
+        $this->repository->save($product);
+
+        return $product;
+    }
 }

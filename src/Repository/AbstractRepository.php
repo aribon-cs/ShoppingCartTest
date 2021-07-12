@@ -48,11 +48,11 @@ abstract class AbstractRepository extends ServiceEntityRepository
         }
     }
 
-    public function findManyByIds(array $ids)
+    public function findManyByIds(array $ids, string $field = 'id')
     {
         return
             $this->createQueryBuilder('q')
-                ->where('q.id in ( :ids )')
+                ->where("q.$field in ( :ids )")
                 ->setParameter('ids', $ids)
                 ->getQuery()
                 ->getResult();
@@ -86,5 +86,4 @@ abstract class AbstractRepository extends ServiceEntityRepository
         ;
     }
     */
-
 }
