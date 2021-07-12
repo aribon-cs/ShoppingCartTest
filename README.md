@@ -1,5 +1,10 @@
 
 # Devolon Shopping Cart
+#### Tl;dr
+We use the Chain of Responsibility to handle checkout requests in this project.
+
+#
+
 
 copy example env to env and set needed config
 ```
@@ -46,3 +51,14 @@ make composer
 ```
 
 #
+
+### TODO
+- Complete README
+- Add Documents
+- Add DELETE methods
+- Create Workflow for Checkouts
+- Create docker-compose for test env
+- Add user and Checkout entities and persist Request
+- Add tests for ProductDiscountApi, DiscountApi and etc
+- Add factory for creating entity objects in DataFixture and use them in tests
+- Refactor to return hash ids instead of ids for security reasons
