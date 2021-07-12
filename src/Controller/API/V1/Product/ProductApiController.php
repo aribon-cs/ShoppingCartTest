@@ -2,12 +2,12 @@
 
 namespace App\Controller\API\V1\Product;
 
+use App\Controller\AbstractApiController;
 use App\Entity\Product;
 use App\Service\ProductService;
 use App\Service\Validation\ValidationService;
-use App\Traits\ApiResponseTrait;
 use App\Validator\Constraint\ProductConstraint;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Validator\Constraint\ProductUpdateConstraint;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,10 +15,8 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/product", name="product_")
  */
-class ProductController extends AbstractController
+class ProductApiController extends AbstractApiController
 {
-    use ApiResponseTrait;
-
     /**
      * @Route("", name="list", methods={"GET"})
      */
@@ -33,7 +31,7 @@ class ProductController extends AbstractController
     public function create(ProductService $productService, ValidationService $validationService, Request $request): JsonResponse
     {
         $input = json_decode($request->getContent(), true);
-        $validationService->validateByConstraint($input, ProductConstraint::getConstraint());
+        $validationService->validateByConstraint($input ?? [], ProductConstraint::getConstraint());
 
         $product = $productService->insert($input);
 
@@ -43,8 +41,21 @@ class ProductController extends AbstractController
     /**
      * @Route("/{id}", name="detail", methods={"GET"}, requirements={"id"="\d+"})
      */
-    public function detail(Product $product,ProductService $productService): JsonResponse
+    public function detail(Product $product, ProductService $productService): JsonResponse
     {
-        return $this->respondWithSuccess($productService->getTransformer()->transformModel($product,'list'));
+        return $this->respondWithSuccess($productService->getTransformer()->transformModel($product, 'list'));
+    }
+
+    /**
+     * @Route("/{id}", name="update", methods={"PUT"})
+     */
+    public function update(Product $product, ProductService $productService, ValidationService $validationService, Request $request): JsonResponse
+    {
+        $input = json_decode($request->getContent(), true);
+        $validationService->validateByConstraint($input ?? [], ProductUpdateConstraint::getConstraint());
+
+        $productService->update($product, $input);
+
+        return $this->respondWithSuccess($productService->getTransformer()->transformModel($product));
     }
 }

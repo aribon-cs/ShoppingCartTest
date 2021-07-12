@@ -2,13 +2,12 @@
 
 namespace App\Controller\API\V1\Product;
 
+use App\Controller\AbstractApiController;
 use App\Entity\Product;
 use App\Service\DiscountService;
 use App\Service\Validation\ValidationService;
-use App\Traits\ApiResponseTrait;
 use App\Transformer\DiscountTransformer;
 use App\Validator\Constraint\DiscountConstraint;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,9 +15,8 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/product", name="product_discount_")
  */
-class ProductDiscountController extends AbstractController
+class ProductDiscountApiController extends AbstractApiController
 {
-    use ApiResponseTrait;
 
     /**
      * @Route("/{id}/discount", name="list", methods={"GET"}, requirements={"id"="\d+"})
@@ -37,7 +35,7 @@ class ProductDiscountController extends AbstractController
         ValidationService $validationService,
         DiscountService $discountService
     ): JsonResponse {
-        $input = json_decode($request->getContent(), true);
+        $input = json_decode($request->getContent(), true) ?? [];
         $validationService->validateByConstraint($input, DiscountConstraint::getConstraint());
 
         $discount = $discountService->insert($input, $product);
