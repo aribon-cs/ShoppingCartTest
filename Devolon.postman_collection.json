@@ -1,0 +1,915 @@
+{
+	"info": {
+		"_postman_id": "10cab9f1-75d5-4a17-bec3-963575a17429",
+		"name": "Devolon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "A",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "3250",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/product",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.19.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.11"
+								},
+								{
+									"key": "X-Total-Count",
+									"value": "200"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-Total-Count"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,OPTIONS,POST,PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Access-Control-Allow-Origin,Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 Jul 2021 15:57:47 GMT"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"pagination\": {\n            \"current\": 1,\n            \"perPage\": 25,\n            \"lastPage\": 8,\n            \"total\": 200,\n            \"number\": 25\n        },\n        \"items\": {\n            \"data\": [\n                {\n                    \"id\": 3206,\n                    \"name\": \"Alberta Berge\",\n                    \"price\": 918119,\n                    \"discounts\": [\n                        {\n                            \"number\": 44,\n                            \"price\": 506498\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3250,\n                    \"name\": \"Augusta Wyman MD\",\n                    \"price\": 863384,\n                    \"discounts\": [\n                        {\n                            \"number\": 57,\n                            \"price\": 41901\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3251,\n                    \"name\": \"Addison Rodriguez\",\n                    \"price\": 961156,\n                    \"discounts\": [\n                        {\n                            \"number\": 47,\n                            \"price\": 52681\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3256,\n                    \"name\": \"Alec Littel\",\n                    \"price\": 167936,\n                    \"discounts\": [\n                        {\n                            \"number\": 16,\n                            \"price\": 581879\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3257,\n                    \"name\": \"Bertram Wilderman\",\n                    \"price\": 1976578,\n                    \"discounts\": [\n                        {\n                            \"number\": 79,\n                            \"price\": 291289\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3264,\n                    \"name\": \"Casper Jenkins\",\n                    \"price\": 546948,\n                    \"discounts\": [\n                        {\n                            \"number\": 76,\n                            \"price\": 1638883\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3269,\n                    \"name\": \"Carlotta Harvey\",\n                    \"price\": 598485,\n                    \"discounts\": [\n                        {\n                            \"number\": 48,\n                            \"price\": 553678\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3273,\n                    \"name\": \"Asia Little\",\n                    \"price\": 1006730,\n                    \"discounts\": [\n                        {\n                            \"number\": 7,\n                            \"price\": 271814\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3281,\n                    \"name\": \"Alex Howe\",\n                    \"price\": 1325464,\n                    \"discounts\": [\n                        {\n                            \"number\": 90,\n                            \"price\": 1272759\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3295,\n                    \"name\": \"Abner Powlowski\",\n                    \"price\": 275345,\n                    \"discounts\": [\n                        {\n                            \"number\": 69,\n                            \"price\": 874187\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3298,\n                    \"name\": \"Bernie Hoppe\",\n                    \"price\": 153413,\n                    \"discounts\": [\n                        {\n                            \"number\": 68,\n                            \"price\": 1086950\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3303,\n                    \"name\": \"Adriana Nitzsche\",\n                    \"price\": 265559,\n                    \"discounts\": [\n                        {\n                            \"number\": 54,\n                            \"price\": 578519\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3309,\n                    \"name\": \"Anika Spinka\",\n                    \"price\": 1590498,\n                    \"discounts\": [\n                        {\n                            \"number\": 31,\n                            \"price\": 1451579\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3317,\n                    \"name\": \"Cheyanne Beahan\",\n                    \"price\": 106916,\n                    \"discounts\": [\n                        {\n                            \"number\": 15,\n                            \"price\": 488208\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3327,\n                    \"name\": \"Celestino Kub\",\n                    \"price\": 576727,\n                    \"discounts\": [\n                        {\n                            \"number\": 78,\n                            \"price\": 518235\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3330,\n                    \"name\": \"Arely Windler\",\n                    \"price\": 1806938,\n                    \"discounts\": [\n                        {\n                            \"number\": 79,\n                            \"price\": 393064\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3337,\n                    \"name\": \"Alex Jerde\",\n                    \"price\": 1826792,\n                    \"discounts\": [\n                        {\n                            \"number\": 9,\n                            \"price\": 1766943\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3343,\n                    \"name\": \"Brandon Adams\",\n                    \"price\": 1102857,\n                    \"discounts\": [\n                        {\n                            \"number\": 74,\n                            \"price\": 1868987\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3345,\n                    \"name\": \"Brody Collins\",\n                    \"price\": 1951352,\n                    \"discounts\": [\n                        {\n                            \"number\": 64,\n                            \"price\": 877056\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3355,\n                    \"name\": \"Alicia Tremblay\",\n                    \"price\": 597819,\n                    \"discounts\": [\n                        {\n                            \"number\": 22,\n                            \"price\": 1466481\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3363,\n                    \"name\": \"Celine Collins\",\n                    \"price\": 1511310,\n                    \"discounts\": [\n                        {\n                            \"number\": 79,\n                            \"price\": 777366\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3376,\n                    \"name\": \"Adaline Stoltenberg DVM\",\n                    \"price\": 1489499,\n                    \"discounts\": [\n                        {\n                            \"number\": 33,\n                            \"price\": 998994\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3377,\n                    \"name\": \"Carli Kuhn\",\n                    \"price\": 1103080,\n                    \"discounts\": [\n                        {\n                            \"number\": 70,\n                            \"price\": 479172\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3386,\n                    \"name\": \"Arnold Powlowski\",\n                    \"price\": 1878641,\n                    \"discounts\": [\n                        {\n                            \"number\": 46,\n                            \"price\": 1879141\n                        }\n                    ]\n                },\n                {\n                    \"id\": 3395,\n                    \"name\": \"Bud Vandervort\",\n                    \"price\": 815156,\n                    \"discounts\": [\n                        {\n                            \"number\": 43,\n                            \"price\": 922938\n                        }\n                    ]\n                }\n            ]\n        }\n    }\n}"
+						},
+						{
+							"name": "query",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/product?name=A",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"product"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "A"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.19.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.11"
+								},
+								{
+									"key": "X-Total-Count",
+									"value": "1"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-Total-Count"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,OPTIONS,POST,PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Access-Control-Allow-Origin,Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 Jul 2021 16:55:09 GMT"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"pagination\": {\n            \"current\": 1,\n            \"perPage\": 25,\n            \"lastPage\": 1,\n            \"total\": 1,\n            \"number\": 1\n        },\n        \"items\": {\n            \"data\": [\n                {\n                    \"id\": 3401,\n                    \"name\": \"A\",\n                    \"price\": 1231,\n                    \"discounts\": []\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"A\",\n    \"price\": 1231\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"G2\",\n    \"price\": 21\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "discount",
+			"item": [
+				{
+					"name": "product discount",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/product/3250/discount",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"3250",
+								"discount"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "product discount",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/product/3250/discount",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"product",
+										"3250",
+										"discount"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.19.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.11"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,OPTIONS,POST,PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Access-Control-Allow-Origin,Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Jul 2021 12:54:49 GMT"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": [\n        {\n            \"number\": 57,\n            \"price\": 41901\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"number\": 2,\n    \"price\": 200\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/discount/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"discount",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "product discount",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/product/3250/discount",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"product",
+										"3250",
+										"discount"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.19.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.11"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,OPTIONS,POST,PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Access-Control-Allow-Origin,Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Jul 2021 12:54:49 GMT"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": [\n        {\n            \"number\": 57,\n            \"price\": 41901\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "product discount",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"number\": 4202,\n    \"price\": 8\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/product/3250/discount",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"product",
+								"3250",
+								"discount"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "product discount",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"number\": 42,\n    \"price\": 88000\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/product/3250/discount",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"product",
+										"3250",
+										"discount"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.19.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.11"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,OPTIONS,POST,PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Access-Control-Allow-Origin,Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, must-revalidate, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Jul 2021 14:41:37 GMT"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Expires",
+									"value": "Sat, 10 Jul 2021 14:41:37 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"id\": 1785,\n        \"productId\": 3250,\n        \"number\": 42,\n        \"price\": 88000\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/discount",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"discount"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "771934",
+									"disabled": true
+								},
+								{
+									"key": "priceGt",
+									"value": "771934",
+									"disabled": true
+								},
+								{
+									"key": "priceLt",
+									"value": "771934",
+									"disabled": true
+								},
+								{
+									"key": "productId",
+									"value": "3201",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list query id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/discount?id=1579",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"discount"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1579"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.19.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.11"
+								},
+								{
+									"key": "X-Total-Count",
+									"value": "1"
+								},
+								{
+									"key": "Access-Control-Expose-Headers",
+									"value": "X-Total-Count"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,OPTIONS,POST,PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Access-Control-Allow-Origin,Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 10 Jul 2021 13:02:35 GMT"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"pagination\": {\n            \"current\": 1,\n            \"perPage\": 25,\n            \"lastPage\": 1,\n            \"total\": 1,\n            \"number\": 1\n        },\n        \"items\": {\n            \"data\": [\n                {\n                    \"id\": 1579,\n                    \"productId\": 3201,\n                    \"number\": 47,\n                    \"price\": 771934\n                }\n            ]\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Checkout",
+			"item": [
+				{
+					"name": "checkout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product\":[\n        {\n            \"id\": 3202,\n            \"number\": 200\n        },\n       {\n            \"id\": 3202,\n            \"number\": 1\n        },\n        {\n            \"id\": 3201,\n            \"number\": 100\n        },\n        {\n            \"id\": 3202,\n            \"number\": 20\n        },\n        {\n            \"id\": 3201,\n            \"number\": 100\n        },\n        {\n            \"id\": 3203,\n            \"number\": 30\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/checkout",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"checkout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"product\":[\n        {\n            \"id\": 3201,\n            \"number\": 100\n        },\n        {\n            \"id\": 3202,\n            \"number\": 20\n        },\n        {\n            \"id\": 3201,\n            \"number\": 100\n        },\n        {\n            \"id\": 3202,\n            \"number\": 20\n        },\n        {\n            \"id\": 3201,\n            \"number\": 100\n        },\n        {\n            \"id\": 3203,\n            \"number\": 30\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/checkout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"checkout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.19.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.11"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,HEAD,OPTIONS,POST,PUT"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Access-Control-Allow-Origin,Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, must-revalidate, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Jul 2021 17:01:58 GMT"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Expires",
+									"value": "Sun, 11 Jul 2021 17:01:58 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"data\": {\n        \"title\": \"checkout\",\n        \"items\": [\n            {\n                \"id\": 3203,\n                \"name\": \"Jessika Senger\",\n                \"total\": \"28,126,020\",\n                \"discounted price\": \"0\",\n                \"total number\": 30,\n                \"number with discounts\": 0\n            },\n            {\n                \"id\": 3202,\n                \"name\": \"Ms. Hulda Barton MD\",\n                \"total\": \"66,191,200\",\n                \"discounted price\": \"0\",\n                \"total number\": 40,\n                \"number with discounts\": 0\n            },\n            {\n                \"id\": 3201,\n                \"name\": \"Wilton Simonis\",\n                \"total\": \"750,000\",\n                \"discounted price\": \"750,000\",\n                \"total number\": 300,\n                \"number with discounts\": 300\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "not exist error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"product\":[\n        {\n            \"id\": 3200,\n            \"number\": 100\n        },\n        {\n            \"id\": 3100,\n            \"number\": 100\n        },\n        {\n            \"id\": 3202,\n            \"number\": 20\n        },\n        {\n            \"id\": 3201,\n            \"number\": 100\n        },\n        {\n            \"id\": 3202,\n            \"number\": 20\n        },\n        {\n            \"id\": 3201,\n            \"number\": 100\n        },\n        {\n            \"id\": 3203,\n            \"number\": 30\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/checkout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"checkout"
+									]
+								}
+							},
+							"status": "Not Acceptable",
+							"code": 406,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.19.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/problem+json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/7.4.11"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, must-revalidate, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Jul 2021 17:27:53 GMT"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Expires",
+									"value": "Sun, 11 Jul 2021 17:27:53 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"ids\": [\n            3200,\n            3100\n        ]\n    },\n    \"status\": 406,\n    \"errors\": \"not exist products\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8022/api/v1"
+		}
+	]
+}
