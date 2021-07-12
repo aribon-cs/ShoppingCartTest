@@ -20,6 +20,6 @@ class ValidationException extends ApiBaseException
      */
     public function __construct($message, Exception $previous = null, array $headers = [], $code = 0)
     {
-        parent::__construct(Response::HTTP_PRECONDITION_FAILED, $message, $previous, $headers, $code);
+        parent::__construct(Response::HTTP_BAD_REQUEST, $message, $previous, $headers, $code);
     }
 }

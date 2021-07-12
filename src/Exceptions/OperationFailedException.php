@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 class OperationFailedException extends ApiBaseException
 {
     /**
-     * CustomBadException constructor.
+     * OperationFailedException constructor.
      *
      * @param $message
      * @param int $code

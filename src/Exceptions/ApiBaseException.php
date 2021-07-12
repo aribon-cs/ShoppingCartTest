@@ -41,4 +41,9 @@ class ApiBaseException extends HttpException
     {
         return $this->apiException;
     }
+
+    public function setExtra($name, $value)
+    {
+        $this->apiException->set($name, $value);
+    }
 }
