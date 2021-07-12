@@ -29,7 +29,7 @@ class ProductDiscountApiController extends AbstractApiController
     /**
      * @Route("/{id}/discount", name="add_discount", methods={"PUT"}, requirements={"id"="\d+"})
      */
-    public function addDiscountToProduct(
+    public function add(
         Product $product,
         Request $request,
         ValidationService $validationService,

@@ -9,18 +9,12 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @author Saeed Jazei <cs.jazei@gmail.com>
  */
-class DiscountConstraint implements ConstraintInterface
+class DiscountUpdateConstraint implements ConstraintInterface
 {
     final public static function getConstraint(): Assert\Collection
     {
         return new Assert\Collection(
             [
-                'product' => new Assert\Required(
-                    [
-                        new Assert\Type(['type' => 'integer', 'message' => 'number must be integer']),
-                        new Assert\Positive(),
-                    ],
-                ),
                 'number' => new Assert\Required(
                     [
                         new Assert\Type(['type' => 'integer', 'message' => 'number must be integer']),

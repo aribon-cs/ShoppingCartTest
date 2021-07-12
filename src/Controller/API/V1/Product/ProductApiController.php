@@ -35,7 +35,7 @@ class ProductApiController extends AbstractApiController
 
         $product = $productService->insert($input);
 
-        return $this->respondWithSuccess($productService->getTransformer()->transformModel($product));
+        return $this->respondCreated($productService->getTransformer()->transformModel($product));
     }
 
     /**
